@@ -1,10 +1,10 @@
-import { Router } from 'express'
-import * as cars from './cars.json'
+import { Router } from "express";
+import CarController from "./controller/car.controller";
+import MakerController from "./controller/maker.controller";
 
-const router = Router()
+const router = Router();
 
-router.get('/', (req, res) => {
-  res.json(cars)
-})
+new CarController(router);
+new MakerController(router);
 
-export default router
+export default router;
