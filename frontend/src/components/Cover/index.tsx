@@ -1,26 +1,24 @@
-import React from 'react'
-// import { Spacing } from '../../styles'
-import { useScreenDimensions } from '../../hooks/useScreenDimensions'
-
-import { Image } from './styles'
+import React, { memo } from "react";
+import { Spacing } from "../../styles";
+import { useScreenDimensions } from "../../hooks/useScreenDimensions";
+import { Image } from "react-native-expo-image-cache";
 
 interface Props {
-  source: string
+  source: string;
 }
 
-// Cover has to fill the whole card area.
 const Cover = ({ source }: Props) => {
-  const size = useScreenDimensions()
-
+  const size = useScreenDimensions();
   return (
     <Image
-      source={{ uri: source }}
+      uri={source}
       style={{
-        width: size.width,
+        width: size.width - Spacing.padding * 2,
         height: size.width * 0.67,
+        resizeMode: "cover",
       }}
     />
-  )
-}
+  );
+};
 
-export default Cover
+export default memo(Cover);

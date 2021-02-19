@@ -33,8 +33,17 @@ export const Line = styled.View`
   marginvertical: ${Spacing.extraMargin}px;
 `;
 
+export const Actions = styled.View`
+  flexdirection: row;
+`;
 export const MakeYear = styled.Text`
   paddingvertical: ${Spacing.extraMargin}px;
+`;
+
+export const Description = styled.Text`
+  color: ${Colors.textColor};
+  fontsize: 16px;
+  fontfamily: Arial;
 `;
 /// added propsType
 interface StarProps {
@@ -45,3 +54,11 @@ export const StarIcon = styled(AntDesign).attrs((props: StarProps) => ({
   color: props.star ? Colors.starColor : Colors.textColor,
   size: 24,
 }))``;
+
+export const EditIcon = styled(AntDesign).attrs(() => ({
+  name: "edit",
+  color: Colors.textColor,
+  size: 24,
+}))`
+  marginhorizontal: ${Spacing.extraMargin}px;
+`;
