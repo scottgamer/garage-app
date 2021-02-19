@@ -1,4 +1,6 @@
+export const url = "http://localhost:3000/api";
+
 export const getList = async () => {
-  const response = await fetch('http://localhost:3000/')
-  return await response.json()
-}
+  const response = await fetch(url);
+  return await response.json();
+};
