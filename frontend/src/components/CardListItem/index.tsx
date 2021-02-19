@@ -1,11 +1,8 @@
-import React from 'react'
-import { useSelector, useDispatch, RootStateOrAny } from 'react-redux'
-import { TouchableOpacity } from 'react-native'
-
-import { toggleStar } from '../../store/actions'
-
-import Cover from '../Cover'
-
+import React, { useCallback } from "react";
+import { TouchableOpacity } from "react-native";
+import { ICar } from "../../types";
+import { useCarStar } from "../../hooks";
+import Cover from "../Cover";
 import {
   Card,
   Header,
@@ -14,44 +11,37 @@ import {
   Model,
   MakeYear,
   StarIcon,
-} from './styles'
+} from "./styles";
 
 export interface CarProps {
-  id: string
-  model: string
-  make: string
-  year: string
-  coverURL: string
-  starred?: boolean
+  car: ICar;
+  starred?: boolean;
+  onPress: Function;
 }
 
-const CardListItem: React.FC<CarProps> = (car: CarProps) => {
-  const star = useSelector<RootStateOrAny>((state) => {
-    return state.star.starred[car.id]
-  })
-  const dispatch = useDispatch()
+const CardListItem: React.FC<CarProps> = ({ car, onPress }) => {
+  const { star, toggleStar: _toggleStar } = useCarStar(car);
 
-  const _toggleStar = () => {
-    dispatch(toggleStar(car.id))
-  }
-
+  const _onPress = useCallback(() => onPress(car), [onPress, car]);
   return (
-    <Card>
-      <Cover source={car.coverURL} />
-      <Details>
-        <Header>
-          <Model>{car.model}</Model>
-          <TouchableOpacity onPress={() => _toggleStar()}>
-            <StarIcon star={star} />
-          </TouchableOpacity>
-        </Header>
-        <Line />
-        <MakeYear>
-          {car.make} | {car.year}
-        </MakeYear>
-      </Details>
-    </Card>
-  )
-}
+    <TouchableOpacity onPress={_onPress}>
+      <Card>
+        <Cover source={car?.image?.md} />
+        <Details>
+          <Header>
+            <Model>{car.model}</Model>
+            <TouchableOpacity onPress={_toggleStar}>
+              <StarIcon star={star} />
+            </TouchableOpacity>
+          </Header>
+          <Line />
+          <MakeYear>
+            {car.make_name} | {car.year}
+          </MakeYear>
+        </Details>
+      </Card>
+    </TouchableOpacity>
+  );
+};
 
-export default CardListItem
+export default CardListItem;
