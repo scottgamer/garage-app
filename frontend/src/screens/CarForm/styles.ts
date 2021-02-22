@@ -14,43 +14,43 @@ export const Container = styled.View`
 `;
 
 export const Field = styled.View`
-  flexdirection: row;
-  alignitems: center;
-  justifycontent: space-between;
-  paddingvertical: 8px;
+  flexDirection: row;
+  alignItems: center;
+  justifyContent: space-between;
+  paddingVertical: 8px;
 `;
 
 export const Input = styled.TextInput`
   height: 40px;
-  bordercolor: #d8d8d8;
-  borderwidth: 1px;
-  borderradius: 4px;
+  borderColor: #d8d8d8;
+  borderWidth: 1px;
+  borderRadius: 4px;
   width: 250px;
   padding: 8px;
 `;
 
 export const Label = styled.Text`
   color: ${Colors.textColor};
-  fontsize: 14px;
-  fontfamily: Arial;
+  fontSize: 14px;
+  fontFamily: Arial;
 `;
 export const ErrorLabel = styled.Text`
   color: ${Colors.alertColor};
-  fontsize: 14px;
-  fontfamily: Arial;
-  paddingvertical: ${Spacing.extraMargin}px;
+  fontSize: 14px;
+  fontFamily: Arial;
+  paddingVertical: ${Spacing.extraMargin}px;
 `;
 
 export const Caption = styled.Text`
   color: ${Colors.disabledColor};
-  fontsize: 14px;
-  fontfamily: Arial;
+  fontSize: 14px;
+  fontFamily: Arial;
 `;
 
 export const Loading = styled.Text`
   color: ${Colors.textColor};
-  fontsize: 14px;
-  fontfamily: Arial;
+  fontSize: 14px;
+  fontFamily: Arial;
 `;
 
 export const Submit = styled.TouchableOpacity``;
@@ -58,15 +58,15 @@ export const Submit = styled.TouchableOpacity``;
 export const Remove = styled.TouchableOpacity``;
 
 export const ActionText = styled.Text`
-  fontsize: 16px;
-  fontfamily: Arial;
+  fontSize: 16px;
+  fontFamily: Arial;
   textalign: center;
 `;
 
 export const Actions = styled.View`
-  flexdirection: row;
-  alignitems: center;
-  justifycontent: space-between;
+  flexDirection: row;
+  alignItems: center;
+  justifyContent: space-between;
 `;
 
 export const DeleteIcon = styled(AntDesign).attrs(() => ({

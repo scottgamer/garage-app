@@ -16,15 +16,15 @@ export const Details = styled.View`
 `;
 
 export const Header = styled.View`
-  flexdirection: row;
-  justifycontent: space-between;
-  paddingvertical: ${Spacing.extraMargin}px;
+  flexDirection: row;
+  justifyContent: space-between;
+  paddingVertical: ${Spacing.extraMargin}px;
 `;
 
 export const Model = styled.Text`
   color: ${Colors.textColor};
-  fontsize: 30px;
-  fontfamily: Arial;
+  fontSize: 30px;
+  fontFamily: Arial;
 `;
 
 export const Line = styled.View`
@@ -34,7 +34,7 @@ export const Line = styled.View`
 `;
 
 export const MakeYear = styled.Text`
-  paddingvertical: ${Spacing.extraMargin}px;
+  paddingVertical: ${Spacing.extraMargin}px;
 `;
 /// added propsType
 interface StarProps {

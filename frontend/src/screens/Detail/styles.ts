@@ -16,15 +16,15 @@ export const Details = styled.View`
 `;
 
 export const Header = styled.View`
-  flexdirection: row;
-  justifycontent: space-between;
-  paddingvertical: ${Spacing.extraMargin}px;
+  flexDirection: row;
+  justifyContent: space-between;
+  paddingVertical: ${Spacing.extraMargin}px;
 `;
 
 export const Model = styled.Text`
   color: ${Colors.textColor};
-  fontsize: 30px;
-  fontfamily: Arial;
+  fontSize: 30px;
+  fontFamily: Arial;
 `;
 
 export const Line = styled.View`
@@ -34,7 +34,7 @@ export const Line = styled.View`
 `;
 
 export const Actions = styled.View`
-  flexdirection: row;
+  flexDirection: row;
 `;
 export const MakeYear = styled.Text`
   paddingvertical: ${Spacing.extraMargin}px;
@@ -42,8 +42,8 @@ export const MakeYear = styled.Text`
 
 export const Description = styled.Text`
   color: ${Colors.textColor};
-  fontsize: 16px;
-  fontfamily: Arial;
+  fontSize: 16px;
+  fontFamily: Arial;
 `;
 /// added propsType
 interface StarProps {
